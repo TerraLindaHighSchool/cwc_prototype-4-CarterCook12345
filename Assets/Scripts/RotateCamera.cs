@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class RotateCamera : MonoBehaviour
 {
-    public float rotationSpeed;
+    private Rigidbody playerRb;
+    private GameObject focalPoint;
+    public float rotationSpeed = 5.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerRb = GetComponent<Rigidbody>();
+        focalPoint = GameObject.Find("Focal Point");
     }
 
     // Update is called once per frame
